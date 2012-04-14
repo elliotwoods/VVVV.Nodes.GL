@@ -1,0 +1,107 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.OpenGL\Package\Development Tests\1. Layers.v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.OpenGL\Package\Development Tests\Hello world.v4p" systemname="Hello world">
+   <BOUNDS height="10125" left="6000" top="2100" type="Window" width="7695">
+   </BOUNDS>
+   <NODE componentmode="InABox" filename="..\..\bin\Debug\VVVV.Nodes.OpenGL.dll" id="0" nodename="Renderer (OpenGL)" systemname="Renderer (OpenGL)">
+   <BOUNDS height="100" left="5565" top="7725" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="8745" left="7035" top="4770" type="Window" width="16785">
+   </BOUNDS>
+   <BOUNDS height="5625" left="465" top="3825" type="Box" width="6615">
+   </BOUNDS>
+   <PIN pinname="PositionXY" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="2" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
+   <BOUNDS height="100" left="1215" top="1635" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="5" nodename="LFO (Animation)" systemname="LFO (Animation)">
+   <BOUNDS height="100" left="1290" top="1185" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="2" dstpinname="Random Seed" srcnodeid="5" srcpinname="Cycles">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="10" nodename="Quad (OpenGL)" systemname="Quad (OpenGL)">
+   <BOUNDS height="270" left="465" top="3450" type="Node" width="5175">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="11" nodename="Translate (Transform Vector)" systemname="Translate (Transform Vector)">
+   <BOUNDS height="100" left="465" top="2580" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="12" nodename="DeNiro (Animation)" systemname="DeNiro (Animation)">
+   <BOUNDS height="100" left="1215" top="2175" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="XYZ" srcnodeid="12" srcpinname="Position Out">
+   </LINK>
+   <LINK dstnodeid="12" dstpinname="Go To Position" srcnodeid="2" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="13" nodename="UniformScale (Transform)" systemname="UniformScale (Transform)">
+   <BOUNDS height="100" left="465" top="3015" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="0.32">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="13" dstpinname="Transform In" srcnodeid="11" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Transform" srcnodeid="13" srcpinname="Transform Out">
+   </LINK>
+   <NODE componentmode="Hidden" id="14" nodename="HSL (Color Join)" systemname="HSL (Color Join)">
+   <BOUNDS height="100" left="3030" top="2985" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Hue" visible="1">
+   </PIN>
+   <PIN pinname="Lightness" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Color" srcnodeid="14" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="15" nodename="LinearSpread (Spreads)" systemname="LinearSpread (Spreads)">
+   <BOUNDS height="100" left="3030" top="2580" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="14" dstpinname="Hue" srcnodeid="15" srcpinname="Output">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Layer" dstnodeid="0" dstpinname="Input">
+   </LINK>
+   </PATCH>

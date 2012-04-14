@@ -1,0 +1,49 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.OpenGL\Package\Development Tests\0. Hello world.v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.OpenGL\Package\Development Tests\Hello world.v4p" systemname="Hello world">
+   <BOUNDS height="12150" left="6000" top="2100" type="Window" width="12180">
+   </BOUNDS>
+   <NODE componentmode="InABox" filename="..\..\bin\Debug\VVVV.Nodes.OpenGL.dll" id="0" nodename="Renderer (OpenGL)" systemname="Renderer (OpenGL)">
+   <BOUNDS height="100" left="5565" top="6825" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="8745" left="7035" top="4770" type="Window" width="16785">
+   </BOUNDS>
+   <BOUNDS height="8400" left="465" top="2925" type="Box" width="11220">
+   </BOUNDS>
+   <PIN pinname="PositionXY" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Background" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="8" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="1725" top="180" type="Node" width="2175">
+   </BOUNDS>
+   <BOUNDS height="1935" left="1725" top="180" type="Box" width="6210">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="|OpenGL running inside VVVV|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="36">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="10" nodename="Quad (OpenGL)" systemname="Quad (OpenGL)">
+   <BOUNDS height="100" left="480" top="2415" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|0.96187,0.96187,0.96187,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Input" srcnodeid="10" srcpinname="Layer">
+   </LINK>
+   </PATCH>

@@ -1,0 +1,213 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+   <PATCH nodename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.OpenGL\Package\Development Tests\3. 2-renderersv4p.v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.OpenGL\Package\Development Tests\2. 2-renderersv4p.v4p" systemname="2. 2-renderersv4p">
+   <BOUNDS height="10095" left="7095" top="3960" type="Window" width="10710">
+   </BOUNDS>
+   <NODE componentmode="InABox" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="0" nodename="Renderer (OpenGL)" systemname="Renderer (OpenGL)">
+   <BOUNDS height="100" left="5580" top="7725" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="8745" left="7035" top="4770" type="Window" width="16785">
+   </BOUNDS>
+   <BOUNDS height="3480" left="480" top="3825" type="Box" width="4695">
+   </BOUNDS>
+   <PIN pinname="PositionXY" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="2" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
+   <BOUNDS height="100" left="1215" top="735" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="5" nodename="LFO (Animation)" systemname="LFO (Animation)">
+   <BOUNDS height="100" left="1290" top="285" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="2" dstpinname="Random Seed" srcnodeid="5" srcpinname="Cycles">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="10" nodename="Quad (OpenGL)" systemname="Quad (OpenGL)">
+   <BOUNDS height="270" left="465" top="2400" type="Node" width="3345">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="11" nodename="Translate (Transform Vector)" systemname="Translate (Transform Vector)">
+   <BOUNDS height="100" left="465" top="1530" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="12" nodename="DeNiro (Animation)" systemname="DeNiro (Animation)">
+   <BOUNDS height="100" left="1215" top="1125" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="XYZ" srcnodeid="12" srcpinname="Position Out">
+   </LINK>
+   <LINK dstnodeid="12" dstpinname="Go To Position" srcnodeid="2" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="13" nodename="UniformScale (Transform)" systemname="UniformScale (Transform)">
+   <BOUNDS height="100" left="465" top="1965" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="0.32">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="13" dstpinname="Transform In" srcnodeid="11" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Transform" srcnodeid="13" srcpinname="Transform Out">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="16" nodename="Cons (OpenGL)" systemname="Cons (OpenGL)">
+   <BOUNDS height="270" left="480" top="3180" type="Node" width="4695">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="16" dstpinname="Input 1" srcnodeid="10" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" id="17" nodename="RetroColors (Color)" systemname="RetroColors (Color)">
+   <BOUNDS height="100" left="3750" top="1935" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Color" srcnodeid="17" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="24" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
+   <BOUNDS height="100" left="5865" top="585" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="23" nodename="LFO (Animation)" systemname="LFO (Animation)">
+   <BOUNDS height="100" left="5940" top="135" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="24" dstpinname="Random Seed" srcnodeid="23" srcpinname="Cycles">
+   </LINK>
+   <NODE componentmode="Hidden" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="22" nodename="Quad (OpenGL)" systemname="Quad (OpenGL)">
+   <BOUNDS height="270" left="5115" top="2400" type="Node" width="3345">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="21" nodename="Translate (Transform Vector)" systemname="Translate (Transform Vector)">
+   <BOUNDS height="100" left="5115" top="1530" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="20" nodename="DeNiro (Animation)" systemname="DeNiro (Animation)">
+   <BOUNDS height="100" left="5865" top="1125" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="21" dstpinname="XYZ" srcnodeid="20" srcpinname="Position Out">
+   </LINK>
+   <LINK dstnodeid="20" dstpinname="Go To Position" srcnodeid="24" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="19" nodename="UniformScale (Transform)" systemname="UniformScale (Transform)">
+   <BOUNDS height="100" left="5115" top="1965" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="0.32">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="19" dstpinname="Transform In" srcnodeid="21" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="22" dstpinname="Transform" srcnodeid="19" srcpinname="Transform Out">
+   </LINK>
+   <NODE componentmode="Hidden" id="18" nodename="RetroColors (Color)" systemname="RetroColors (Color)">
+   <BOUNDS height="100" left="8400" top="1935" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="22" dstpinname="Color" srcnodeid="18" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="16" dstpinname="Input 2" srcnodeid="22" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" filename="..\plugins\VVVV.Nodes.OpenGL.dll" id="25" nodename="Renderer (OpenGL)" systemname="Renderer (OpenGL)">
+   <BOUNDS height="100" left="10515" top="7725" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="8745" left="7035" top="4770" type="Window" width="16785">
+   </BOUNDS>
+   <BOUNDS height="3510" left="5415" top="3825" type="Box" width="4695">
+   </BOUNDS>
+   <PIN pinname="PositionXY" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" filename="" id="26" nodename="Renderer (TTY)" systemname="Renderer (TTY)">
+   <BOUNDS height="100" left="4605" top="23160" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="1740" left="450" top="7500" type="Box" width="9630">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="0" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="25" dstpinname="Layer" linkstyle="VHV">
+   <LINKPOINT x="540" y="3623">
+   </LINKPOINT>
+   <LINKPOINT x="5415" y="3623">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
